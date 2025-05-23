@@ -13,9 +13,11 @@
 Code for simulating SRT data using scCube, scDesign3 and ZINB-WaVE is provided in the **SRT_Benchmark**. Two datasetes are provided as references, which are Mouse hippocampus MERFISH data and human DLPFC 10X Visium data.
 
 ## Generate SRT data using scRNA-seq data ## 
-
+The single-cell RNA-seq data of mouse brain Tabula_Muris_TM_facs_Brain_Non_Myeloid_adata.h5ad as well as the pretrained model Tabula_Muris_TM_facs_Brain_Non_Myeloid_epoch10000.pth were downloaded from https://github.com/ZJUFanLab/scCube/blob/main/tutorial/statistics.md.
+The generation pipeline is stored at **Resolution/Data_Generation**
    
 ## Spot deconvolution benchmark ##
-
+Code for benchmarking the nine deconvolution methods is deposited at **Resolution/Evaluation**, which calculates the RMSE, SRCC, JS, PCC, and AS values. 
 
 ## Visualization ##
+Code for boxplot, bar plot, line plot generation is stored at **R**.
