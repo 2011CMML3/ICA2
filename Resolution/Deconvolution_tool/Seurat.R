@@ -59,31 +59,7 @@ deconv_results <- SPOTlight(
 )
 
 # --------------------------
-# 4. Extract and Visualize Results
-# --------------------------
-# Get cell type proportions matrix
-cell_fractions <- deconv_results$mat
-head(cell_fractions)
-
-# Add results to spatial Seurat object
-spatial_seurat[["SPOTlight"]] <- CreateAssayObject(data = t(cell_fractions))
-
-# Visualize T cell proportions
-SpatialFeaturePlot(
-  spatial_seurat,
-  features = "T_cell",  # Replace with your cell type name
-  pt.size.factor = 1.5,
-  alpha = c(0.1, 1)
-) +
-  scale_fill_gradientn(
-    colours = c("lightgrey", "navyblue"),
-    limits = c(0, 1),
-    name = "Proportion"
-  ) +
-  ggtitle("T Cell Spatial Distribution")
-
-# --------------------------
-# 5. Save Results
+# 4. Save Results
 # --------------------------
 # Save deconvolution results
 saveRDS(deconv_results, "spotlight_deconvolution_results.rds")
