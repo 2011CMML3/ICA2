@@ -21,7 +21,7 @@ The single-cell RNA-seq data of mouse brain Tabula_Muris_TM_facs_Brain_Non_Myelo
 The generation pipeline is stored at **Resolution/Data_Generation**
    
 ## Spot deconvolution benchmark ##
-Code for benchmarking the nine deconvolution methods is deposited at **Resolution/Evaluation**, which calculates the RMSE, SRCC, JS, PCC, and AS values. 
+Code for benchmarking the nine deconvolution methods is deposited at **Resolution/Evaluation**, which calculates the RMSE, SRCC, JS, PCC, and AS values. Code for spot deconvolution tools to generate cell proportions are stored at **Resolution/Deconvolution_tool**
 
 ## Visualization ##
 Code for boxplot, bar plot, line plot generation is stored at **R**.
