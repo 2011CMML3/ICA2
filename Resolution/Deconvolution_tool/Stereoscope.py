@@ -49,7 +49,7 @@ model = st.Stereoscope(
     sc_data=sc_data_pseudo,      # Single-cell pseudo-bulk data (cell types × genes)
     st_data=spatial_data,        # Spatial data
     n_components=10,            # Latent space dimensions (default=10)
-    use_gpu=True                # Whether to use GPU acceleration
+    use_gpu=False                # Whether to use GPU acceleration
 )
 model.fit(
     n_epochs=100,               # Training epochs
