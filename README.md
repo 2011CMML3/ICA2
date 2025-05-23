@@ -8,7 +8,11 @@
 1. Cell2location 0.1.4
 2. SpatialDWLS 0.0.1
 3. Stereoscope 0.2.0
-4. 
+4. Tangram
+5. DestVI
+6. Seurat
+7. SPOTlight
+8. DSTG
 ## Reference-based SRT data simulation & Bechmark ##
 Code for simulating SRT data using scCube, scDesign3 and ZINB-WaVE is provided in the **SRT_Benchmark**. Two datasetes are provided as references, which are Mouse hippocampus MERFISH data and human DLPFC 10X Visium data.
 
