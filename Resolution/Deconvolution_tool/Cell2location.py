@@ -59,7 +59,7 @@ model.train(
     max_epochs=100,   
     batch_size=None,  
     train_size=0.9,    
-    use_gpu=True      
+    use_gpu=False      
 )
 
 # Plot training loss (check convergence)
