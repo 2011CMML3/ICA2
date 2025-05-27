@@ -1,5 +1,5 @@
 ###################################7d
-data <- read.xlsx('D:/2025春夏学期/CMML3/ICA2/application/spot_deconvolution/evaluate/Diff_pcc_srcc.xlsx')
+data <- read.xlsx('D:/CMML3/ICA2/application/spot_deconvolution/evaluate/Diff_pcc_srcc.xlsx')
 first_plot_order <- c(
   "RCTD", "Tangram", "Cell2location", "spatialDWLS", "DSTG", 
   "Seurat", "SPOTlight", "DestVI", "Stereoscope"
