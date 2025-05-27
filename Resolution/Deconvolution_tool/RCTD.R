@@ -73,8 +73,7 @@ head(cell_type_df)
 # Save weights matrix
 write.csv(weights, "rctd_cell_type_weights.csv")
 
-# Save full results
-saveRDS(rctd, "rctd_results_object.rds")
+
 
 # Save spatial data with deconvolution results
 spatial_data$rctd_weights <- weights
