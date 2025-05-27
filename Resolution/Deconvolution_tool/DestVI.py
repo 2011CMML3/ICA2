@@ -84,5 +84,3 @@ cell_proportions.to_csv("destvi_cell_proportions.csv")
 # Save model for later use
 model.save("destvi_model/")
 
-# Save spatial data with deconvolution results
-adata_sp.write("spatial_data_with_destvi.h5ad")
