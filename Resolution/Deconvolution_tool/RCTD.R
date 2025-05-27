@@ -71,7 +71,7 @@ head(cell_type_df)
 # 5. Save Results
 # --------------------------
 # Save weights matrix
-write.csv(weights, "rctd_cell_type_weights.csv")
+write.csv(weights, "rctd_cell_proportions.csv")
 
 
 
