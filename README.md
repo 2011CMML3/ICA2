@@ -22,8 +22,9 @@ The single-cell RNA-seq data of mouse brain Tabula_Muris_TM_facs_Brain_Non_Myelo
 The generation pipeline of spatial transcriptomic data with reslutions of n = 5, 10, 20, 30, 50, 100 is stored at **Resolution/Data_Generation/tutorial_resolution.ipynb** which uses the single cell RNA-seq data to simulate gene expression profiles as well as random spatial patterns. 
    
 ## Spot deconvolution benchmark ##
-To evaluate the spot deconvolution capability of the above  9 tools, parameters including the RMSE, SRCC, JS, PCC, and AS values were analyzed based on the spot deconvolution file, **cell_proportions.csv**. Code for benchmarking the nine deconvolution methods is deposited at **Resolution/Evaluation/Evaluation.ipynb**.
+1. To evaluate the spot deconvolution capability of tools including RCTD, Cell2location, SpatialDWLS, Tangram, DestVI, Seurat, SPOTlight and DSTG, parameters to evaluate including the RMSE, SRCC, JS, PCC, and AS.
+2. The performance of the deconvolution tools were analyzed based on the result file of spot deconvolution, **cell_proportions.csv**. Code for benchmarking is deposited at **Resolution/Evaluation/Evaluation.ipynb**.
 
 ## Visualization ##
-Code for visulazation of the evaluation result for SRT data simulation is stored at **R/SRT_evaluation_draw.R**, which generate boxplots for the PCC GEV and MAE.
-Code for visualization of the evaluation result for deconvolution benchmark is stored at **R/Deconvolution_evaluation.R**, **R/Difference_bar_plot.R**, and **Average_AS.R**, which generate line plot, bar plot and boxplot.
+1. Code for visulazation of the evaluation result for SRT data simulation is stored at **R/SRT_evaluation_draw.R**, which generate boxplots for the PCC GEV and MAE.
+2. Code for visualization of the evaluation result for deconvolution benchmark is stored at **R/Deconvolution_evaluation.R**, **R/Difference_bar_plot.R**, and **Average_AS.R**, which generate line plot, bar plot and boxplot.
