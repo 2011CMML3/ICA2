@@ -62,5 +62,5 @@ model.fit(
 # --------------------------
 results = model.predict()
 print(results.head())  # Output cell type proportions per spot (DataFrame)
-
+results.to_csv("stereoscope_cell_proportions.csv")
 
