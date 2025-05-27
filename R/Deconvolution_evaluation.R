@@ -1,4 +1,4 @@
-data <- read.xlsx('D:/2025春夏学期/CMML3/ICA2/application/spot_deconvolution/evaluate/all_spot.csv') #Average value per spot for all deconvolution methods obtained from pcc_all_spot.csv, ssim_all_spot.csv, rmse_all_spot.csv,jsd_all_spot.csv
+data <- read.xlsx('D:/CMML3/ICA2/application/spot_deconvolution/evaluate/all_spot.csv') #Average value per spot for all deconvolution methods obtained from pcc_all_spot.csv, ssim_all_spot.csv, rmse_all_spot.csv,jsd_all_spot.csv
 data$Tool <- factor(data$Tool, levels=c('Cell2location', 'DestVI','spatialDWLS','RCTD','Seurat','Tangram','SPOTlight','Stereoscope','DSTG'))
 data_filtered <- subset(data, Metrics %in% c("PCC")) #SRCC, RMSE, JS
 
