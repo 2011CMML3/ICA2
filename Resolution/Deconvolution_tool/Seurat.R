@@ -63,6 +63,6 @@ deconv_results <- SPOTlight(
 # --------------------------
 # Save deconvolution results
 saveRDS(deconv_results, "spotlight_deconvolution_results.rds")
-write.csv(cell_fractions, "Seurat_cell_type_proportions.csv")
+write.csv(cell_fractions, "Seurat_cell_proportions.csv")
 
 
