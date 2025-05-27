@@ -62,5 +62,3 @@ spatial_data$dwls_deconv <- cell_proportions
 saveRDS(dwls_results, "dwls_deconvolution_results.rds")
 write.csv(cell_proportions, "cell_type_proportions.csv")
 
-# Save spatial data with deconvolution results
-saveRDS(spatial_data, "spatial_data_with_dwls.rds")
