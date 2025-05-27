@@ -25,4 +25,5 @@ The generation pipeline of spatial transcriptomic data with reslutions of n = 5,
 To evaluate the spot deconvolution capability of the above  9 tools, parameters including the RMSE, SRCC, JS, PCC, and AS values were analyzed based on the spot deconvolution file, 'cell_type_proportions.csv'. Code for benchmarking the nine deconvolution methods is deposited at **Resolution/Evaluation/Evaluation.ipynb**.
 
 ## Visualization ##
-The visulazation of the evaluation result for both SRT data simulation and the deconvolution benchmark are stored at **R**, which generate boxplot, bar plot, line plot generation.
+Code for visulazation of the evaluation result for SRT data simulation is stored at **R/SRT_evaluation_draw.R**, which generate boxplots for the PCC GEV and MAE.
+Code for visualization of the evaluation result for deconvolution benchmark is stored at **R/Deconvolution_evaluation.R**, **R/Difference_bar_plot.R**, and **Average_AS.R**, which generate line plot, bar plot and boxplot.
