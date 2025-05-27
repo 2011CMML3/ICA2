@@ -14,12 +14,12 @@
 7. SPOTlight 0.1.0
 8. DSTG 0.1.0
 ## Reference-based SRT data simulation & Bechmark ##
-Code for simulating SRT data using scCube, scDesign3 and ZINB-WaVE is provided in the **SRT_Benchmark**. Two datasetes are provided as references, which are Mouse hippocampus MERFISH data and human DLPFC 10X Visium data. The code for running scDesign3 and ZINB-WaVE are stored at , respectively. And the 
+Code for simulating SRT data using scCube, scDesign3 and ZINB-WaVE is provided in the **SRT_Benchmark**. Two datasetes are provided as references, which are Mouse hippocampus MERFISH data and human DLPFC 10X Visium data. The code for running scDesign3 and ZINB-WaVE are stored at **scDesign3**, **ZINB-WaVE**, respectively. And the 
 
 ## Generate SRT data using scRNA-seq data ## 
-The single-cell RNA-seq data of mouse brain Tabula_Muris_TM_facs_Brain_Non_Myeloid_adata.h5ad as well as the pretrained model Tabula_Muris_TM_facs_Brain_Non_Myeloid_epoch10000.pth were downloaded from https://github.com/ZJUFanLab/scCube/blob/main/tutorial/statistics.md. 
+1. The single-cell RNA-seq data of mouse brain Tabula_Muris_TM_facs_Brain_Non_Myeloid_adata.h5ad as well as the pretrained model Tabula_Muris_TM_facs_Brain_Non_Myeloid_epoch10000.pth were downloaded from https://github.com/ZJUFanLab/scCube/blob/main/tutorial/statistics.md. 
 
-The generation pipeline of spatial transcriptomic data with reslutions of n = 5, 10, 20, 30, 50, 100 is stored at **Resolution/Data_Generation/tutorial_resolution.ipynb** which uses the single cell RNA-seq data to simulate gene expression profiles as well as random spatial patterns. 
+2. The generation pipeline of spatial transcriptomic data with reslutions of n = 5, 10, 20, 30, 50, 100 is stored at **Resolution/Data_Generation/tutorial_resolution.ipynb** which uses the single cell RNA-seq data to simulate gene expression profiles as well as random spatial patterns. 
    
 ## Spot deconvolution benchmark ##
 1. To evaluate the spot deconvolution capability of tools including RCTD, Cell2location, SpatialDWLS, Tangram, DestVI, Seurat, SPOTlight and DSTG, parameters to evaluate including the RMSE, SRCC, JS, PCC, and AS.
