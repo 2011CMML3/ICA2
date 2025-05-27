@@ -1,4 +1,4 @@
-setwd('D:/2025春夏学期/CMML3/ICA2/R')
+setwd('D:/CMML3/ICA2/R')
 getwd()
 library(Seurat)
 library(SingleCellExperiment)
@@ -10,7 +10,7 @@ BiocManager::install("zellkonverter")
 # Read the file
 library(zellkonverter)
 # BiocManager::install("mkl-2024.2.2")
-sce <- readH5AD("D:/2025春夏学期/CMML3/ICA2/scCube/tutorial/demo_data/DLPFC_151507_adata.h5ad")
+sce <- readH5AD("D:/CMML3/ICA2/scCube/tutorial/demo_data/DLPFC_151507_adata.h5ad")
 class(sce)
 print(sce)
 # Convert to seurat object
