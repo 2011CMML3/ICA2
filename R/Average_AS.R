@@ -1,5 +1,5 @@
 ############################Fig. 2e
-data <- read.xlsx('D:/2025春夏学期/CMML3/ICA2/R/application/spot_deconvolution/evaluate/AS.xlsx',colNames = F)
+data <- read.xlsx('D:/CMML3/ICA2/R/application/spot_deconvolution/evaluate/AS.xlsx',colNames = F)
 data$X1 <- factor(data$X1, levels=c('Cell2location', 'DestVI','spatialDWLS','RCTD','Seurat','Tangram','SPOTlight','Stereoscope','DSTG'))
 ggplot(data,aes(y = reorder(X1, X2), x = X2,fill = X1)) +
   stat_boxplot(geom = "errorbar",
