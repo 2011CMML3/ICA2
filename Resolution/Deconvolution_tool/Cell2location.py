@@ -92,7 +92,7 @@ cell_densities = results['means_cell_abundance_w_sf']
 # 6. Save Results
 # --------------------------
 # Save cell abundance estimates
-cell_densities.to_csv("cell2location_abundances.csv")
+cell_densities.to_csv("cell2location_cell_proportions.csv")
 
 # Save model for later use
 model.save("cell2location_model/")
