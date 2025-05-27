@@ -10,12 +10,12 @@ BiocManager::install("zellkonverter")
 # Read the file
 library(zellkonverter)
 # BiocManager::install("mkl-2024.2.2")
-sce <- readH5AD("D:/CMML3/ICA2/scCube/tutorial/demo_data/DLPFC_151507_adata.h5ad")
+sce <- readH5AD("D:/CMML3/ICA2/scCube/tutorial/demo_data/DLPFC_151507_adata.h5ad") # MERFISH_0.06_adata.h5ad
 class(sce)
 print(sce)
 # Convert to seurat object
 library(Seurat)
-seurat_obj <- as.Seurat(sce, counts = "X", data = NULL)  # "X" 是 .h5ad 中的主矩阵
+seurat_obj <- as.Seurat(sce, counts = "X", data = NULL)  
 sce <- as.SingleCellExperiment(seurat_obj)
 sce2 <- sce
 
