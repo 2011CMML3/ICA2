@@ -7,7 +7,7 @@ library(SingleCellExperiment)
 library(scater)
 
 # Read the file
-zinb_adata <- readH5AD("D:/2025春夏学期/CMML3/ICA2/scCube/tutorial/demo_data/DLPFC_151507_adata.h5ad")
+zinb_adata <- readH5AD("D:/CMML3/ICA2/scCube/tutorial/demo_data/DLPFC_151507_adata.h5ad")
 
 # Convert SingleCellExperiment object
 zinb_seurat_obj <- as.Seurat(zinb_adata, counts = "X", data = NULL)  # "X" 是 .h5ad 中的主矩阵
