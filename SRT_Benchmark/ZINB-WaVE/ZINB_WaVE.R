@@ -6,39 +6,39 @@ library(zellkonverter)
 library(SingleCellExperiment)
 library(scater)
 
-# 读取 h5ad 文件
+# Read the file
 zinb_adata <- readH5AD("D:/2025春夏学期/CMML3/ICA2/scCube/tutorial/demo_data/DLPFC_151507_adata.h5ad")
 
-# 转换为 SingleCellExperiment 对象
+# Convert SingleCellExperiment object
 zinb_seurat_obj <- as.Seurat(zinb_adata, counts = "X", data = NULL)  # "X" 是 .h5ad 中的主矩阵
 zinb_sce <- as.SingleCellExperiment(zinb_seurat_obj)
 
-# 2. 转换 counts 为稠密矩阵
+# 
 library(Matrix)
 counts_matrix <- Matrix::as.matrix(counts(zinb_sce))  # 专用方法，通常保留名称
 counts(zinb_sce) <- counts_matrix 
 
-# 3. 拟合参数
+# simulate parameters
 params <- splatEstimate(zinb_sce)
 
-# 4. 调整参数（按需修改）
+# adjust the parameters
 params2 <- setParams(params, 
                     nGenes = 18094,#155
-                    batchCells = 4221)#
+                    batchCells = 4221)#5232
 
-# 5. 模拟数据
+# sumulate the data
 zinb_sim_sce <- splatSimulate(params2, method = "groups")
 
 
 
-# 假设原始数据有空间坐标（如 'X' 和 'Y'）
-spatial_coords <- colData(zinb_sce)[, c("x", "y")]  # 替换为实际的坐标列名
+# adjust the coordinates
+spatial_coords <- colData(zinb_sce)[, c("x", "y")]  
 
-# 将空间坐标添加到模拟数据
+# add coordinates to the simulated data
 colData(zinb_sim_sce)$x <- spatial_coords$x
 colData(zinb_sim_sce)$y <- spatial_coords$y
 
-# 可视化模拟数据的空间分布
+# visualize the distribution of the spatial data
 library(ggplot2)
 ggplot(as.data.frame(colData(zinb_sim_sce)), aes(x, y)) +
   geom_point(size=1, alpha=0.6) +
