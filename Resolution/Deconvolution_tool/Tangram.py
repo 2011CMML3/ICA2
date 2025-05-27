@@ -68,4 +68,4 @@ spatial_coords = pd.DataFrame(adata_sp.obsm['spatial'],
                              columns=['x', 'y'], 
                              index=adata_sp.obs_names)
 result_df = pd.concat([spatial_coords, adata_sp.obs], axis=1)
-result_df.to_csv('Tangram_celltype_results.csv')
+result_df.to_csv('Tangram_cell_proportions.csv')
