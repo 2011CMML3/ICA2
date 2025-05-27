@@ -7,15 +7,15 @@ library(SingleCellExperiment)
 library(scater)
 
 # Read the file
-zinb_adata <- readH5AD("D:/CMML3/ICA2/scCube/tutorial/demo_data/DLPFC_151507_adata.h5ad")
+zinb_adata <- readH5AD("D:/CMML3/ICA2/scCube/tutorial/demo_data/DLPFC_151507_adata.h5ad") # MERFISH_0.06_adata.h5ad
 
 # Convert SingleCellExperiment object
-zinb_seurat_obj <- as.Seurat(zinb_adata, counts = "X", data = NULL)  # "X" 是 .h5ad 中的主矩阵
+zinb_seurat_obj <- as.Seurat(zinb_adata, counts = "X", data = NULL) 
 zinb_sce <- as.SingleCellExperiment(zinb_seurat_obj)
 
 # 
 library(Matrix)
-counts_matrix <- Matrix::as.matrix(counts(zinb_sce))  # 专用方法，通常保留名称
+counts_matrix <- Matrix::as.matrix(counts(zinb_sce))  
 counts(zinb_sce) <- counts_matrix 
 
 # simulate parameters
