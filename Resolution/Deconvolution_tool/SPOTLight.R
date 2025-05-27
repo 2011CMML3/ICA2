@@ -72,5 +72,3 @@ write.csv(cell_proportions, "spotlight_cell_proportions.csv")
 # Save full model
 saveRDS(nmf_model, "spotlight_model.rds")
 
-# Save spatial data with deconvolution results
-saveRDS(spatial_data, "spatial_data_with_spotlight.rds")
