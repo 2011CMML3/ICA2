@@ -22,7 +22,7 @@ The single-cell RNA-seq data of mouse brain Tabula_Muris_TM_facs_Brain_Non_Myelo
 The generation pipeline of spatial transcriptomic data with reslutions of n = 5, 10, 20, 30, 50, 100 is stored at **Resolution/Data_Generation/tutorial_resolution.ipynb** which uses the single cell RNA-seq data to simulate gene expression profiles as well as random spatial patterns. 
    
 ## Spot deconvolution benchmark ##
-To evaluate the spot deconvolution capability of the above  9 tools, parameters including the RMSE, SRCC, JS, PCC, and AS values were analyzed based on the spot deconvolution file, 'cell_type_proportions.csv'. Code for benchmarking the nine deconvolution methods is deposited at **Resolution/Evaluation/Evaluation.ipynb**.
+To evaluate the spot deconvolution capability of the above  9 tools, parameters including the RMSE, SRCC, JS, PCC, and AS values were analyzed based on the spot deconvolution file, **cell_proportions.csv**. Code for benchmarking the nine deconvolution methods is deposited at **Resolution/Evaluation/Evaluation.ipynb**.
 
 ## Visualization ##
 Code for visulazation of the evaluation result for SRT data simulation is stored at **R/SRT_evaluation_draw.R**, which generate boxplots for the PCC GEV and MAE.
