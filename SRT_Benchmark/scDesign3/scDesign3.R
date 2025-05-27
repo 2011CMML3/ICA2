@@ -3,18 +3,17 @@ getwd()
 library(Seurat)
 library(SingleCellExperiment)
 
-# 安装 zellkonverter（Bioconductor 包）
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("zellkonverter")
 
-# 读取 .h5ad 文件
+# Read the file
 library(zellkonverter)
-#BiocManager::install("mkl-2024.2.2")
+# BiocManager::install("mkl-2024.2.2")
 sce <- readH5AD("D:/2025春夏学期/CMML3/ICA2/scCube/tutorial/demo_data/DLPFC_151507_adata.h5ad")
 class(sce)
 print(sce)
-# 转换为 Seurat 对象（可选）
+# Convert to seurat object
 library(Seurat)
 seurat_obj <- as.Seurat(sce, counts = "X", data = NULL)  # "X" 是 .h5ad 中的主矩阵
 sce <- as.SingleCellExperiment(seurat_obj)
@@ -28,13 +27,14 @@ library(ggplot2)
 library(dplyr)
 library(viridis)
 theme_set(theme_classic())
-genes <- c('GFAP','HPCAL1','HOPX','NEFH','PCP4','KRT17','MOBP')#'Gad1','Mbp','Nnat','Aqp4','Slc17a6','Fn1','Pdgfra','Selplg','Myh11'
+genes <- c('GFAP','HPCAL1','HOPX','NEFH','PCP4','KRT17','MOBP') #'Gad1','Mbp','Nnat','Aqp4','Slc17a6','Fn1','Pdgfra','Selplg','Myh11':for MERFISH data
 example_sce <- sce2[which(rownames(sce)%in%genes), ]
-#set.seed(123)
+# set.seed(123)
+# simulate the data
 example_simu <- scdesign3(
   sce = example_sce,
   assay_use = "counts",
-  celltype = "Cell_type",#大小写
+  celltype = "Cell_type",
   pseudotime = NULL,
   spatial = c("x", "y"),#spatial1,2-> x,y
   other_covariates = NULL,
@@ -52,11 +52,12 @@ example_simu <- scdesign3(
   parallelization = "pbmcapply"
 )
 
+# convert to singlecellexperiment
 simu_sce <- SingleCellExperiment(list(counts = example_simu$new_count), colData = example_simu$new_covariate)
 logcounts(simu_sce) <- log1p(counts(simu_sce))
 
+# For visualization, extract gene expression profiles and spatial patterns
 VISIUM_dat_test <- data.frame(t(log1p(counts(example_sce)))) %>% as_tibble() %>% dplyr::mutate(X = colData(example_sce)$x, Y = colData(example_sce)$y) %>% tidyr::pivot_longer(-c("X", "Y"), names_to = "Gene", values_to = "Expression") %>% dplyr::mutate(Method = "Reference")
-
 VISIUM_dat_scDesign3 <- data.frame(t(log1p(counts(simu_sce)))) %>% as_tibble() %>% dplyr::mutate(X = colData(simu_sce)$x, Y = colData(simu_sce)$y) %>% tidyr::pivot_longer(-c("X", "Y"), names_to = "Gene", values_to = "Expression") %>% dplyr::mutate(Method = "scDesign3")
 VISIUM_dat <- bind_rows(VISIUM_dat_test, VISIUM_dat_scDesign3) %>% dplyr::mutate(Method = factor(Method, levels = c("Reference", "scDesign3")))
 
