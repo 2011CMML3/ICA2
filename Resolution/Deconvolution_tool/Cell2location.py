@@ -97,5 +97,3 @@ cell_densities.to_csv("cell2location_abundances.csv")
 # Save model for later use
 model.save("cell2location_model/")
 
-# Save spatial data with results
-adata_sp.write("spatial_data_with_cell2location.h5ad")
