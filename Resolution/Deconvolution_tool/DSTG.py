@@ -69,5 +69,3 @@ results.to_csv("dstg_cell_proportions.csv")
 # Save model parameters
 model.save("dstg_model/")
 
-# Save spatial data with deconvolution results
-spatial_data.write("spatial_data_with_dstg.h5ad")
