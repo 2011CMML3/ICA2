@@ -63,7 +63,9 @@ print(adata_sp.obs.head())
 # Save spatial data with deconvolution results
 adata_sp.write('spatial_data_with_tangram.h5ad')
 
-# Save mapping object
-import pickle
-with open('tangram_mapping.pkl', 'wb') as f:
-    pickle.dump(ad_map, f)
+# 
+spatial_coords = pd.DataFrame(adata_sp.obsm['spatial'], 
+                             columns=['x', 'y'], 
+                             index=adata_sp.obs_names)
+result_df = pd.concat([spatial_coords, adata_sp.obs], axis=1)
+result_df.to_csv('Tangram_celltype_results.csv')
